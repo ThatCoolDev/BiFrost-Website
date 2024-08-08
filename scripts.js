@@ -1,18 +1,17 @@
-// Smooth scrolling for navigation links
+// Smooth scrolling for internal navigation links
 document.querySelectorAll('nav a').forEach(anchor => {
     anchor.addEventListener('click', function(e) {
-        e.preventDefault();
-        document.querySelector(this.getAttribute('href')).scrollIntoView({
-            behavior: 'smooth'
-        });
+        const href = this.getAttribute('href');
+
+        // Check if the link is internal (i.e., starts with #) and the target is on the same page
+        if (href.startsWith('#') && document.querySelector(href)) {
+            e.preventDefault();
+            document.querySelector(href).scrollIntoView({
+                behavior: 'smooth'
+            });
+        }
     });
 });
-
-// // Form submission
-// document.getElementById('contactForm').addEventListener('submit', function(event) {
-//     event.preventDefault();
-//     alert('Message sent!');
-// });
 
 // Intersection Observer for scroll animations
 document.addEventListener('DOMContentLoaded', function() {
