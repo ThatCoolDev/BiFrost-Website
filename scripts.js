@@ -8,11 +8,11 @@ document.querySelectorAll('nav a').forEach(anchor => {
     });
 });
 
-// Form submission
-document.getElementById('contactForm').addEventListener('submit', function(event) {
-    event.preventDefault();
-    alert('Message sent!');
-});
+// // Form submission
+// document.getElementById('contactForm').addEventListener('submit', function(event) {
+//     event.preventDefault();
+//     alert('Message sent!');
+// });
 
 // Intersection Observer for scroll animations
 document.addEventListener('DOMContentLoaded', function() {
